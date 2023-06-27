@@ -4,11 +4,11 @@ import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.Constants.GameElement;
 import frc.robot.Constants.VisionConstants;
 import frc.robot.subsystems.LiftSys;
 import frc.robot.subsystems.SwerveSys;
 import frc.robot.subsystems.VisionSys;
+import frc.robot.subsystems.VisionSys.Pipeline;
 
 public class AutoAlignCmd extends CommandBase {
 
@@ -27,7 +27,7 @@ public class AutoAlignCmd extends CommandBase {
         this.xControl = xControl;
         this.yControl = yControl;
 
-        alignController = visionSys.getPipeline().equals(GameElement.kCone) ? VisionConstants.coneController : VisionConstants.cubeController;
+        alignController = visionSys.getPipeline().equals(Pipeline.kPoleTape) ? VisionConstants.coneController : VisionConstants.cubeController;
         alignController.setSetpoint(0.0);
 
         rotController = VisionConstants.rotController;

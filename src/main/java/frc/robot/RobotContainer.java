@@ -41,6 +41,8 @@ import frc.robot.commands.drivetrain.ResetHeadingCmd;
 import frc.robot.commands.drivetrain.SetHeadingCmd;
 import frc.robot.commands.drivetrain.SwerveDriveCmd;
 import frc.robot.commands.intake.InCmd;
+import frc.robot.commands.intake.IntakeConeCmd;
+import frc.robot.commands.intake.IntakeCubeCmd;
 import frc.robot.commands.intake.OutCmd;
 import frc.robot.commands.intake.SetAbsoluteSpeedCmd;
 import frc.robot.commands.intake.StopRollersCmd;
@@ -93,7 +95,7 @@ public class RobotContainer {
     private final JoystickButton driverXBtn = new JoystickButton(driverController, 3);
     private final JoystickButton driverYBtn = new JoystickButton(driverController, 4);
     // private final JoystickButton driverLeftBumper = new JoystickButton(driverController, 5);
-    // private final JoystickButton driverRightBumper = new JoystickButton(driverController, 6);
+    private final JoystickButton driverRightBumper = new JoystickButton(driverController, 6);
     private final JoystickButton driverMenuBtn = new JoystickButton(driverController, 8);
     private final Trigger driverRightTriggerBtn =
         new Trigger(() -> driverController.getRightTriggerAxis() > ControllerConstants.triggerPressedDeadband);
@@ -242,9 +244,16 @@ public class RobotContainer {
 
             driverRightTriggerBtn
                 .onTrue(new OutCmd(intakeSys, lightsSys))
-                .whileTrue(new SetAbsoluteSpeedCmd(intakeSys, lightsSys))
+                .onTrue(new IntakeCubeCmd(intakeSys, lightsSys))
                 .onFalse(new InCmd(intakeSys))
                 .onFalse(new StopRollersCmd(intakeSys, lightsSys));
+
+            driverRightBumper
+                .onTrue(new OutCmd(intakeSys, lightsSys))
+                .whileTrue(new IntakeConeCmd(intakeSys, lightsSys))
+                .onFalse(new InCmd(intakeSys))
+                .onFalse(new StopRollersCmd(intakeSys, lightsSys));
+
             driverLeftTriggerBtn.whileTrue(new LockCmd(swerveSys));
 
             brownOutRumble.addControllers(driverController);

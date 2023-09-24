@@ -115,9 +115,9 @@ public class LEDStrip {
             // Combine color and brightness arrays into buffer and write it to the LEDs
             for(int i = 0; i < buffer.length; i++) {
                 buffer[i] = new Color(
-                    (int) Math.round(colorStates[i].red * 255 * brightnessStates[i] * dimness),
-                    (int) Math.round(colorStates[i].green * 255 * brightnessStates[i] * dimness),
-                    (int) Math.round(colorStates[i].blue * 255 * brightnessStates[i] * dimness)
+                    (colorStates[i].red * brightnessStates[i] * dimness),
+                    (colorStates[i].green * brightnessStates[i] * dimness),
+                    (colorStates[i].blue * brightnessStates[i] * dimness)
                 );
             }
         }

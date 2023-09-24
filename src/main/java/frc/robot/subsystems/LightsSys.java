@@ -23,7 +23,7 @@ public class LightsSys extends SubsystemBase {
 
     private GameElement status = GameElement.kNone;
 
-    private final Color neutralColor = new Color(50, 255, 0);
+    private final Color neutralColor = new Color(255, 2, 141); //new Color(50, 255, 0);
     private final Color coneColor = new Color(150, 128, 0);
     private final Color cubeColor = new Color(204, 0, 255);
 
@@ -73,7 +73,7 @@ public class LightsSys extends SubsystemBase {
         rightStrip = new LEDStrip(64);
         rightStrip.setDimness(dimness);
 
-        leftStrip = new LEDStrip(64);
+        leftStrip = new LEDStrip(63);
         leftStrip.setDimness(dimness);
 
         outerLeftStrip = new LEDStrip(32);
@@ -137,6 +137,48 @@ public class LightsSys extends SubsystemBase {
                 outerRightStrip.setColor(neutralColor);
                 innerRightStrip.setColor(neutralColor);
                 innerLeftStrip.setColor(neutralColor);
+
+                for(int i = 1; i <= rightStrip.getLength(); i++) {
+                    if(i <= 11) {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                    else if(i <= 21) {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                    else if(i <= 32) {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                    else if(i <= 42) {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                    else if(i <= 53) {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                    else {
+                        rightStrip.setColor(new Color(255, 2, 141), rightStrip.getLength() - i);
+                    }
+                }
+
+                for(int i = 0; i < leftStrip.getLength(); i++) {
+                    if(i <= 10) {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                    else if(i <= 20) {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                    else if(i <= 31) {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                    else if(i <= 41) {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                    else if(i <= 52) {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                    else {
+                        leftStrip.setColor(new Color(255, 2, 141), i);
+                    }
+                }
             }
         }
 

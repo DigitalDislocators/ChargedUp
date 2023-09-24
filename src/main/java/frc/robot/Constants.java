@@ -205,7 +205,7 @@ public class Constants {
         public static final double driveOverChargeStationVelMetersPerSecond = 0.35;
 
         public static final double onChargeStationDeg = 10.0;
-        public static final double chargeStationBalancedToleranceDeg = 11.0;
+        public static final double chargeStationBalancedToleranceDeg = 12.0;
 
         public static final double dockVelMetersPerSecond = 0.08;
     }
@@ -284,6 +284,7 @@ public class Constants {
         public static final double row2ShelfInches = 49.0;
         public static final double row2PoleInches = 55.0;
         public static final double row3ShelfInches = 71.0;
+        
         public static final double row3PoleInches = maxHeightInches;
 
         public static final double manualControlPaddingInches = 2.0;
@@ -347,7 +348,7 @@ public class Constants {
 
         public static final double rollerManualControlFactor = 0.8;
 
-        public static final double rollerRelativeMetersPerSecond = 4.875;
+        public static final double rollerRelativeMetersPerSecond = 4.00;
         public static final double rollerRelativeSpeedFactor = 0.25;
 
         public static final double rollerConeMetersPerSecond = 15.0;

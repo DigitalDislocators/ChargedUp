@@ -27,6 +27,7 @@ import frc.robot.commands.auto.programs.Cube;
 import frc.robot.commands.auto.programs.LeftConeGrabCubeDock;
 import frc.robot.commands.auto.programs.LeftConeScoreCube;
 import frc.robot.commands.auto.programs.LeftConeScoreCubeGrabCube;
+import frc.robot.commands.auto.programs.LeftConeWAITScoreCubeGrabCube;
 import frc.robot.commands.auto.programs.RightConeGrabCubeDock;
 import frc.robot.commands.auto.programs.RightConeScoreCube;
 import frc.robot.commands.auto.programs.RightConeScoreCubeGrabCube;
@@ -164,6 +165,7 @@ public class RobotContainer {
         autoSelector.addOption("LeftConeScoreCube", new LeftConeScoreCube(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
         // autoSelector.addOption("LeftConeScoreCubeDock", new LeftConeScoreCubeDock(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
         autoSelector.addOption("LeftConeScoreCubeGrabCube", new LeftConeScoreCubeGrabCube(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
+        autoSelector.addOption("LeftConeWAITScoreCubeGrabCube", new LeftConeWAITScoreCubeGrabCube(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
         // autoSelector.addOption("LeftConeScoreCubeScoreCubeMid", new LeftConeScoreCubeScoreCubeMid(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
         // autoSelector.addOption("RightConeGrabCube", new RightConeGrabCube(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
         autoSelector.addOption("RightConeGrabCubeDock", new RightConeGrabCubeDock(swerveSys, liftSys, clawSys, intakeSys, lightsSys));
